@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>Computed Variables Demo</title>
+
+<style>
+  :root {
+    --innerWidth: 'innerWidth';
+    --innerHeight: 'innerHeight';
+    --cursorX: 'clientX';
+    --cursorY: 'clientY';
+  }
+  html {
+    cursor: none;
+    background: #222;
+  }
+  div {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    border-radius: 100%;
+    border-top-left-radius: 0;
+    top: calc(var(--cursorY) * 1px);
+    left: calc(var(--cursorX) * 1px);
+    background: hsl(var(--cursorX), 75%, 50%);
+  }
+</style>
+
+<div></div>
+
+<script type="module">
+  import computedVariables from './index.js'
+
+  // innerWidth and innerHeight
+  computedVariables(
+    '--inner',
+    value => window[value],
+    window,
+    ['load', 'resize']
+  )
+
+  // cursor X and Y coordinates
+  computedVariables(
+    '--cursor',
+    (value, event) => event[value] || event.touches[0][value],
+    window,
+    ['mousemove', 'touchmove']
+  )
+</script>
