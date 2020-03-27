@@ -11,15 +11,20 @@ const routes = [
   ['*', () => ({ page: 'error', component: NotFound })]
 ]
 
+// Create a storeon instance and fill it with routes
 const store = createStoreon([createRouter(routes)])
+// Get the current route
 const route = store.get()[routerKey]
 console.log(route)
 
+// Render view of current route
 const view = o(route.match.component)
 
+// Update view when route has changed
 store.on(routerChanged, (_, data) => {
   console.log(data)
   view(data.match.component)
 })
 
+// Render app
 document.body.append(App(view))
