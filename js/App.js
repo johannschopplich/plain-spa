@@ -6,8 +6,8 @@ export default view => html`
     <section>
       <ul class="p-m bg-contrast-lowest">
         <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/blog/article-with-name">Article with ID</a></li>
+        <li><a href="/todo">Todo list</a></li>
+        <li><a href="/blog/post-with-name">Blog post with id</a></li>
         <li><a href="/any-link" data-ignore-router>Ignore link (the page will reload)</a></li>
         <li><a href="/not-found">404</a></li>
       </ul>

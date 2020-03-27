@@ -1,12 +1,12 @@
 import { createStoreon } from './modules/storeon/index.js'
 import { createRouter, routerChanged, routerKey } from './modules/storeon/router/index.js'
 import { o } from './modules/sinuous/index.js'
-import { Home, Blog, Post, NotFound } from './components.js'
+import { Home, TodoApp, Post, NotFound } from './components.js'
 import App from './App.js'
 
 const routes = [
   ['/', () => ({ page: 'home', component: Home })],
-  ['/blog', () => ({ page: 'blog', component: Blog })],
+  ['/todo', () => ({ page: 'todo', component: TodoApp })],
   ['/blog/*', id => ({ page: 'post', component: Post({ id }), id })],
   ['*', () => ({ page: 'error', component: NotFound })]
 ]
