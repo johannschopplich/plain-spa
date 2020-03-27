@@ -1,3 +1,7 @@
+:root {
+  --font-family-base: "Inter", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
 a:not([class]) {
   text-decoration: underline;
 }

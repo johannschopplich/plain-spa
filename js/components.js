@@ -2,7 +2,7 @@ import { o, html } from './modules/sinuous/index.js'
 import { map } from './modules/sinuous/map/map.js'
 
 const HelloMessage = ({ name }) => html`
-  <div>Hello ${name}</div>
+  <h2 class="title text-4">Hello ${name}</h2>
 `
 
 export const Home = () => html`
@@ -10,11 +10,11 @@ export const Home = () => html`
 `
 
 export const Post = props => html`
-  <h2>Post ${JSON.stringify(props)}</h2>
+  <h2 class="title text-4">Post ${JSON.stringify(props)}</h2>
 `
 
 export const NotFound = () => html`
-  <h2>Not Found</h2>
+  <h2 class="title text-4">Not Found</h2>
 `
 
 const items = o([])
@@ -23,7 +23,7 @@ export const TodoApp = () => {
 
   const view = html`
     <div>
-      <h3>TODO</h3>
+      <h2 class="title text-4">Todo List</h2>
       <${TodoList} items=${items} />
       <form onsubmit=${handleSubmit}>
         <label htmlFor="new-todo">
