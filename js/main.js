@@ -1,7 +1,11 @@
 import { createStoreon } from './modules/storeon/index.js'
 import { createRouter, routerChanged, routerKey } from './modules/storeon/router/index.js'
 import { o } from './modules/sinuous/index.js'
-import { Home, TodoApp, Post, NotFound } from './components.js'
+
+import { Home } from './components/Home.js'
+import { Post } from './components/Post.js'
+import { TodoApp } from './components/Todo.js'
+import { NotFound } from './components/NotFound.js'
 import App from './App.js'
 
 const routes = [
