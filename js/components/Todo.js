@@ -1,5 +1,4 @@
-import { o, html } from '../modules/sinuous/index.js'
-import { map } from '../modules/sinuous/map/map.js'
+import { o, html, map } from '../modules/sinuous/index.js'
 
 const items = o([])
 

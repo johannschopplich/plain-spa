@@ -9,7 +9,7 @@ import {
   cleanup,
   root,
   sample
-} from './observable/observable.js';
+} from './observable/index.js';
 import { api, context } from './h/index.js';
 import htm from './htm/index.js';
 
@@ -37,3 +37,4 @@ export function svg() {
 }
 
 export { api, context, o, observable };
+export { map } from './map/index.js';
