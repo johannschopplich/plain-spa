@@ -25,7 +25,7 @@ export const TodoApp = () => {
           onchange=${e => text(e.target.value)}
           value=${text}
         />
-        <button class="button is-text">
+        <button class="button is-primary is-outlined">
           Add #${() => items().length + 1}
         </button>
       </form>

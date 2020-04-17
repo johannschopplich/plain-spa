@@ -14,7 +14,7 @@ const Header = () => html`
       <ul class="flow-h">
         <li><a href="/">Home</a></li>
         <li><a href="/todo">Todo</a></li>
-        <li><a href="/blog/post-with-name">Article with ID</a></li>
+        <li><a href="/blog/post-with-id">Post with ID</a></li>
         <li><a href="/any-link" data-ignore-router>Ignore Router Link</a></li>
         <li><a href="/not-found">404</a></li>
       </ul>
