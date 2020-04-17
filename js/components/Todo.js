@@ -13,18 +13,19 @@ export const TodoApp = () => {
 
   const view = html`
     <div>
-      <h2 class="title text-4">Todo List</h2>
+      <h1 class="title text-4">Todo List</h1>
       <${TodoList} items=${items} />
       <form onsubmit=${handleSubmit}>
-        <label htmlFor="new-todo">
+        <label class="label" htmlFor="new-todo">
           What needs to be done?
         </label>
         <input
           id="new-todo"
+          class="control mb-xs"
           onchange=${e => text(e.target.value)}
           value=${text}
         />
-        <button>
+        <button class="button is-text">
           Add #${() => items().length + 1}
         </button>
       </form>
