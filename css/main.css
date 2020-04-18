@@ -8,11 +8,11 @@
   --radius: 0.5em;
 }
 
-body {
+#app {
   padding: var(--space-xs);
 }
 
-body > *:not(:last-child) {
+#app > *:not(:last-child) {
   margin-bottom: var(--space-xs);
 }
 

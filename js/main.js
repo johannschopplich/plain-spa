@@ -31,4 +31,4 @@ store.on(routerChanged, (_, data) => {
 })
 
 // Render app
-document.body.append(App(view))
+document.getElementById('app').append(App(view))
