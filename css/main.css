@@ -12,17 +12,28 @@ body {
   padding: var(--space-xs);
 }
 
+body > *:not(:last-child) {
+  margin-bottom: var(--space-xs);
+}
+
+header {
+  position: sticky;
+  top: var(--space-xs);
+  left: 0;
+  width: 100%;
+}
+
 header .title {
   margin-right: var(--component-spacer);
 }
 
 @media (min-width: 640px) {
-  header.box {
+  header .box {
     display: flex;
     align-items: center;
   }
 
-  nav ul {
+  header nav ul {
     display: flex;
     list-style: none;
     padding: 0;
