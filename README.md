@@ -5,7 +5,7 @@
 <h3 align="center">Plain SPA</h3>
 
 <p align="center">
-  Modern single-page application starting point deployable as-is without any bundlers<br>
+  Modern single-page application deployable as-is without any bundlers<br>
 </p>
 
 <br>
