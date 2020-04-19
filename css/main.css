@@ -40,10 +40,6 @@ header .title {
   }
 }
 
-.mb-xs {
-  margin-bottom: var(--space-xs);
-}
-
 .title {
   font-weight: 700;
 }

@@ -12,6 +12,12 @@ export const TodoApp = () => {
   const text = o('')
 
   const view = html`
+    <style>
+      .control {
+        margin-bottom: var(--space-xs);
+      }
+    </style>
+
     <div>
       <h1 class="title text-4">Todo List</h1>
       <${TodoList} items=${items} />
@@ -21,7 +27,7 @@ export const TodoApp = () => {
         </label>
         <input
           id="new-todo"
-          class="control mb-xs"
+          class="control"
           onchange=${e => text(e.target.value)}
           value=${text}
         />
