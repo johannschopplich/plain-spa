@@ -2,10 +2,10 @@ import { o, html, map } from '../modules/sinuous/index.js'
 
 export const TodoApp = () => {
   const text = o('')
-  let items = o([])
+  const items = o([])
 
   const stored = localStorage.getItem('app.todo')
-  if (stored) items = o(JSON.parse(stored))
+  if (stored) items(JSON.parse(stored))
 
   const view = html`
     <style>
