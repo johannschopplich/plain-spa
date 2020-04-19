@@ -1,15 +1,11 @@
 import { o, html, map } from '../modules/sinuous/index.js'
 
-const items = o([])
-
-const TodoList = ({ items }) => html`
-  <ul>
-    ${map(items, item => html`<li id=${item.id}>${item.text}</li>`)}
-  </ul>
-`
-
 export const TodoApp = () => {
   const text = o('')
+  let items = o([])
+
+  const stored = localStorage.getItem('app.todo')
+  if (stored) items = o(JSON.parse(stored))
 
   const view = html`
     <style>
@@ -43,8 +39,15 @@ export const TodoApp = () => {
     if (!text().length) return
 
     items([...items(), { text: text(), id: Date.now() }])
+    localStorage.setItem('app.todo', JSON.stringify(items()))
     text('')
   }
 
   return view
 }
+
+const TodoList = ({ items }) => html`
+  <ul>
+    ${map(items, item => html`<li id=${item.id}>${item.text}</li>`)}
+  </ul>
+`
