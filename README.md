@@ -12,8 +12,55 @@
 
 ## Introduction
 
-This boilerplate uses [Sinuous](https://github.com/luwes/sinuous) (a small, fast, reactive UI library) and [Storeon Router](https://github.com/storeon/storeon) (570 bytes modern router) under the hood. Both libraries are tied together, I'd otherwise reinvent the wheel.
+Although I fell in love with the possibilities offered by today's libraries like Vue or React, the tooling around them throws me off quite often. Hundreds of megabytes for transpiling all the code. Working on my last project [Accessible Kirby Vue Starterkit](https://github.com/johannschopplich/aria-kirby-vue-starterkit) I had to lookup a lot of Webpack internals to understand how to omit asset size evaluation provided by the Vue CLI by default. If one deviates from the standard tooling, working with it quickly becomes uncomfortable.
 
-The app includes example routes to show its capabilities.
+Sine ES6+ features are available in modern browsers by default, there will be no advantage of transpiling in the future (hopefully). In service workers they are used regularly at the very moment.
 
-To drop `npm` itself as a dependency, the packages used have been imported manually into `js/modules/`. 
+I wanted to create a simple SPA with all of the glory provided by bigger frameworks, but keep the setup as simple as possible and understand what is actually happening. Plain JavaScript, runnable in the browsers without bundling or a `dist` directory to deploy.
+
+To drop `npm` itself as a dependency, the packages in use have been imported manually into `js/modules/`. That sure isn't best practice, but let's you clone the library and execute it locally in an instant.
+
+## Key Features
+
+This boilerplate uses:
+  - [Sinuous](https://github.com/luwes/sinuous) (a small, fast, reactive UI library),
+  - [Storeon](https://github.com/storeon/storeon) (167 bytes event-based Redux-like state manager) and
+  - [Storeon Router](https://github.com/storeon/router) (570 bytes modern router)
+under the hood. All three tiny libraries come at cost of just 2 kilobytes combined. I chose them carefully to not reinvent the wheel after looking up a lot of lightweight UI and router libraries and came to the conclusion, that those are the finest.
+
+For example Sinuous comes up with **tagged templates** and **observables**:
+
+```js
+import { observable, html } from './modules/sinuous/index.js'
+
+const counter = observable(0)
+const view = () => html`
+  <div>Counter ${counter}</div>
+`
+
+document.body.append(view())
+setInterval(() => counter(counter() + 1), 1000)
+```
+
+The app includes several example routes to show Storeon Router's capabilities.
+
+## Bundling
+
+> Doesn't the headline say "deployable as-is without any bundlers"?
+
+Absolutely. The project is ready to ship for production purposes.
+
+**But** you can shave off some bytes and rendering time on the client-side if you compile htm syntax to hyperscript.
+
+```js
+// E.g. the following input:
+html`
+  <div id="foo">hello ${you}</div>
+`
+
+// becomes:
+h('div', { id: 'foo' }, 'hello ', you)
+```
+
+Run `npm i && npm run build` to bundle and minify your app. I tried to decrease the tooling as much as possible. Merely 10 Megabytes (unpacked) of Node modules will be installed.
+Finally change the source path to the entry script file inside `index.html` to `/js/bundle.js`.
