@@ -12,7 +12,7 @@ export default view => html`
 const Header = () => html`
   <header>
     <div class="box" data-theme="light">
-      <p class="title text-4">Vanilla SPA</p>
+      <p class="title text-4">Plain SPA</p>
       <nav>
         <ul class="flow-h">
           <li><a href="/">Home</a></li>

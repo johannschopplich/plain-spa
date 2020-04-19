@@ -17,7 +17,7 @@ export default [{
     rootImport({
       root: `${__dirname}/js/`,
       useInput: 'prepend',
-      extensions: '.js',
+      extensions: '.js'
     }),
     babel({
       plugins: [
@@ -30,5 +30,5 @@ export default [{
 
     // If building for production, minify
     production && terser()
-  ],
+  ]
 }]

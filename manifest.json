@@ -1,6 +1,6 @@
 {
-  "name": "Vanilla JavaScript SPA",
-  "short_name": "Vanilla JavaScript SPA",
+  "name": "Plain SPA",
+  "short_name": "Plain SPA",
   "icons": [
     {
       "src": "/img/android-chrome-192x192.png",

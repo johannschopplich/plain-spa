@@ -1,7 +1,7 @@
 {
-  "name": "vanilla-js-spa",
+  "name": "plain-spa",
   "version": "0.1.0",
-  "description": "Modern SPA starting point deployable as-is without any bundlers",
+  "description": "Modern single-page application starting point deployable as-is without any bundlers",
   "main": "js/main.js",
   "dependencies": {},
   "devDependencies": {
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johannschopplich/vanilla-js-spa.git"
+    "url": "git+https://github.com/johannschopplich/plain-spa.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/johannschopplich/vanilla-js-spa/issues"
+    "url": "https://github.com/johannschopplich/plain-spa/issues"
   },
-  "homepage": "https://github.com/johannschopplich/vanilla-js-spa#readme"
+  "homepage": "https://github.com/johannschopplich/plain-spa#readme"
 }
