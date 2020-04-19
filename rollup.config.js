@@ -9,8 +9,8 @@ export default [{
 	input: 'js/main.js',
 	output: [
 		{
-			file: 'build/bundle.js',
-			format: 'iife'
+			file: 'js/bundle.js',
+			format: 'es'
 		}
 	],
 	plugins: [
