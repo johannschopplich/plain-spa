@@ -53,7 +53,7 @@ The app includes several example routes to show Storeon Router's capabilities.
 
 Absolutely. The project is ready to ship for production purposes.
 
-**However**, you can shave off some bytes and rendering time on the client-side if you compile htm syntax to hyperscript.
+**However**, you can tree-shake and compile htm syntax to hyperscript for a smaller app footprint.
 
 ```js
 // E.g. the following input:
@@ -67,4 +67,6 @@ h('div', { id: 'foo' }, 'hello ', you)
 
 Run `npm i && npm run build` to bundle and minify your app. I tried to decrease the tooling as much as possible. Merely 10 Megabytes (unpacked) of Node modules will be installed.
 
-Finally change the source path to the entry script file inside `index.html` to `/js/bundle.js`.
+Finally change the source path to the entry script file inside `index.html` to `/build/bundle.js`.
+
+This example application bundled amounts to **3294 bytes** in total.

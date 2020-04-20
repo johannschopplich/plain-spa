@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Plain SPA</title>
+  <meta name="description" content="Modern single-page application deployable as-is without any bundlers">
+  <link rel="canonical" href="https://plain-spa.jhnn.dev">
+
+  <meta name="application-name" content="Plain SPA">
+  <meta name="theme-color" content="#0000dc">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Plain SPA">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/img/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/img/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="180x180">
+
+  <link href="/css/buldy-slim.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+
+  <script>document.documentElement.style.setProperty('--vh', `${(window.innerHeight * 0.01).toFixed(2)}px`)</script>
+
+</head>
+
+<body>
+
+  <div id="app"></div>
+  <script type="module" src="/build/bundle.js"></script>
+
+</body>
+</html>

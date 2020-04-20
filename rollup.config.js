@@ -9,7 +9,7 @@ export default [{
 	input: 'js/main.js',
 	output: [
 		{
-			file: 'js/bundle.js',
+			file: 'build/bundle.js',
 			format: 'es'
 		}
 	],
@@ -22,7 +22,7 @@ export default [{
     babel({
       plugins: [
         [htmBabelPlugin, {
-          // import { h } from '/modules/sinuous/index.js'
+          // `import { h } from '/modules/sinuous/index.js'`
           import: '/modules/sinuous/index.js'
         }]
       ]
