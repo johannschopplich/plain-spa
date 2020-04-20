@@ -25,11 +25,11 @@ To drop `npm` itself as a dependency, the packages in use have been imported man
 ## Key Features
 
 This boilerplate uses:
-  - [Sinuous](https://github.com/luwes/sinuous) (≈ 1 kilobytes fast, reactive UI library),
+  - [Sinuous](https://github.com/luwes/sinuous) (1247 bytes fast, reactive UI library),
   - [Storeon](https://github.com/storeon/storeon) (167 bytes event-based Redux-like state manager) and
-  - [Storeon Router](https://github.com/storeon/router) (570 bytes modern router)
+  - [Storeon Router](https://github.com/storeon/router) (570 bytes modern router) under the hood.
 
-… under the hood. All three tiny libraries come at cost of just 2 kilobytes combined. I chose them carefully to not reinvent the wheel after looking up a lot of lightweight UI and router libraries.
+All three tiny libraries come at cost of just 2 kilobytes combined. I chose them carefully to not reinvent the wheel after looking up a lot of lightweight UI and router libraries.
 
 For example Sinuous comes up with **tagged templates** and **observables**:
 
