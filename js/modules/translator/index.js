@@ -34,8 +34,8 @@ export default class Translator {
     const path = `${this._options.filesLocation}/${this._lang}.json`
 
     fetch(path)
-      .then((response) => response.json())
-      .then((translation) => {
+      .then(response => response.json())
+      .then(translation => {
         this.translate(translation)
         this.toggleLangTag()
 
