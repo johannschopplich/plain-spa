@@ -29,7 +29,7 @@ This boilerplate uses:
   - [Storeon](https://github.com/storeon/storeon) (167 bytes event-based Redux-like state manager) and
   - [Storeon Router](https://github.com/storeon/router) (570 bytes modern router)
 
-… under the hood. All three tiny libraries come at cost of just 2 kilobytes combined. I chose them carefully to not reinvent the wheel after looking up a lot of lightweight UI and router libraries and came to the conclusion, that those are the finest.
+… under the hood. All three tiny libraries come at cost of just 2 kilobytes combined. I chose them carefully to not reinvent the wheel after looking up a lot of lightweight UI and router libraries.
 
 For example Sinuous comes up with **tagged templates** and **observables**:
 
