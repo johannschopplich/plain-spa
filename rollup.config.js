@@ -1,7 +1,8 @@
 import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
-import rootImport from 'rollup-plugin-root-import'
+import size from 'rollup-plugin-size'
 import htmBabelPlugin from './js/modules/sinuous/babel-plugin-htm/index.js'
+import rootImport from 'rollup-plugin-root-import'
+import { terser } from 'rollup-plugin-terser'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -14,12 +15,14 @@ export default [{
 		}
 	],
 	plugins: [
+    size(),
     rootImport({
       root: `${__dirname}/js/`,
       useInput: 'prepend',
       extensions: '.js'
     }),
     babel({
+      exclude: 'node_modules/**',
       plugins: [
         [htmBabelPlugin, {
           // `import { h } from '/modules/sinuous/index.js'`
