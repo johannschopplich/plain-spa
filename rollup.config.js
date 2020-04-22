@@ -1,5 +1,5 @@
 import babel from 'rollup-plugin-babel'
-import size from 'rollup-plugin-size'
+import bundleSize from 'rollup-plugin-size'
 import htmBabelPlugin from './js/modules/sinuous/babel-plugin-htm/index.js'
 import rootImport from 'rollup-plugin-root-import'
 import { terser } from 'rollup-plugin-terser'
@@ -15,7 +15,7 @@ export default [{
 		}
 	],
 	plugins: [
-    size(),
+    bundleSize(),
     rootImport({
       root: `${__dirname}/js/`,
       useInput: 'prepend',
