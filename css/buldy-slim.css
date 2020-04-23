@@ -7,10 +7,6 @@
   --color-accent-hover: hsl(357, 43%, 68%);
   --color-accent-active: hsl(357, 43%, 73%);
   --color-accent-a50: hsla(357, 43%, 63%, 0.5);
-  --color-success: hsl(141, 71%, 48%);
-  --color-success-a50: hsla(141, 71%, 48%, 0.5);
-  --color-danger: hsl(348, 100%, 61%);
-  --color-danger-a50: hsla(348, 100%, 61%, 0.5);
   --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-family-heading: var(--font-family-base);
   --line-height-base: 1.5;
@@ -356,12 +352,6 @@ pre code {
   border-color: var(--color-contrast-lowest);
   color: var(--color-contrast-low);
   box-shadow: none;
-}
-.control[aria-invalid=true] {
-  border-color: var(--color-danger);
-}
-.control[aria-invalid=true]:focus {
-  box-shadow: 0 0 0 3px var(--color-danger-a50);
 }
 
 .label {
