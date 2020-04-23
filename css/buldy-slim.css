@@ -548,13 +548,13 @@ pre code {
   margin-bottom: var(--component-spacer);
 }
 
-.space-v > * + *,
-.space-y > * + * {
-  margin-top: var(--space, var(--component-spacer));
+.flow > *:not(:last-child),
+.space-v > *:not(:last-child) {
+  margin-bottom: var(--space, var(--component-spacer));
 }
 
-.space-h > *:not(:last-child),
-.space-x > *:not(:last-child) {
+.flow-h > *:not(:last-child),
+.space-h > *:not(:last-child) {
   margin-right: var(--space, var(--component-spacer));
 }
 
