@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./img/icon.svg" alt="Logo of Plain SPA" height="114">
+  <img src="./img/favicon.svg" alt="Logo of Plain SPA" height="114">
 </p>
 
 <h3 align="center">Plain SPA</h3>
