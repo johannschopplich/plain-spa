@@ -8,6 +8,10 @@
   --radius: 0.5em;
 }
 
+a:not([class]):hover {
+  text-decoration: underline;
+}
+
 #app {
   padding: var(--space-xs);
 }
