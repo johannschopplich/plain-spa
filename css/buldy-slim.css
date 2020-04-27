@@ -332,10 +332,11 @@ pre code {
 }
 
 .control {
+  max-width: 100%;
   width: 100%;
   justify-content: flex-start;
   background-color: var(--color-background);
-  border-color: var(--color-contrast-lower);
+  border-color: var(--color-contrast-low);
   color: var(--color-text);
   padding: var(--space-xxs) var(--space-xs);
   transition: box-shadow 0.15s ease-in-out;
@@ -345,10 +346,7 @@ pre code {
     transition: none;
   }
 }
-.control:hover {
-  border-color: var(--color-contrast-low);
-}
-.control:focus, .control:active {
+.control:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-a50);
 }
@@ -356,14 +354,26 @@ pre code {
   color: var(--color-contrast-low);
   opacity: 1;
 }
-.control[readonly] {
-  box-shadow: none;
-}
 .control[disabled] {
   background-color: var(--color-contrast-lowest);
   border-color: var(--color-contrast-lowest);
-  color: var(--color-contrast-low);
-  box-shadow: none;
+  color: var(--color-contrast-medium);
+}
+.control.is-fullwidth {
+  display: block;
+  width: 100%;
+}
+
+textarea.control {
+  display: block;
+  min-width: 100%;
+}
+textarea.control:not([rows]) {
+  max-height: 40em;
+  min-height: 8em;
+}
+textarea.control[rows] {
+  height: initial;
 }
 
 .label {
