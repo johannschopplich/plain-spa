@@ -1,8 +1,8 @@
 :root {
   --color-primary: hsl(240, 100%, 46%);
-  --color-primary-hover: hsl(240, 100%, 51%);
-  --color-primary-active: hsl(240, 100%, 56%);
-  --color-primary-a50: hsla(240, 100%, 46%, 0.5);
+  --color-primary-hover: hsl(240, 100%, 54%);
+  --color-primary-active: hsl(240, 100%, 62%);
+  --color-primary-lucent: hsla(240, 100%, 46%, 0.35);
   --color-background: var(--color-primary);
   --font-family-base: "Inter", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --radius: 0.5em;
