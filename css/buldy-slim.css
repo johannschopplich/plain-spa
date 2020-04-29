@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
   --color-primary: hsl(224, 58%, 50%);
   --color-primary-hover: hsl(224, 58%, 58%);
@@ -11,6 +13,8 @@
   --font-family-heading: var(--font-family-base);
   --line-height-base: 1.5;
   --line-height-heading: 1.25;
+  --font-size-min: 16;
+  --font-size-max: 18;
   --text-scale-ratio: 1.2;
   --text-s: calc(var(--text-6) / var(--text-scale-ratio));
   --text-6: 1rem;
@@ -30,20 +34,6 @@
   --space-xxxl: 8.5rem;
   --component-spacer: var(--space-m);
   --radius: 0.25em;
-}
-
-:root {
-  font-size: 16px;
-}
-@media (min-width: 320px) {
-  :root {
-    font-size: calc(16px + 2 * ((100vw - 320px) / (1280 - 320)));
-  }
-}
-@media (min-width: 1280px) {
-  :root {
-    font-size: 18px;
-  }
 }
 
 :root,
@@ -77,6 +67,8 @@
   color: var(--color-text);
   background-color: var(--color-background);
 }
+
+/* Reset */
 
 *,
 *::before,
@@ -255,11 +247,24 @@ select:not([multiple]):not([size]) {
   cursor: not-allowed;
 }
 
+/* Generic */
+
 html {
   background-color: var(--color-background, white);
   min-width: 320px;
+  font-size: calc(var(--font-size-min) * 1px);
   overflow-x: hidden;
   overflow-y: scroll;
+}
+@media (min-width: 320px) {
+  html {
+    font-size: calc(calc(var(--font-size-min) * 1px) + (var(--font-size-max) - var(--font-size-min)) * ((100vw - 320px) / (1280 - 320)));
+  }
+}
+@media (min-width: 1280px) {
+  html {
+    font-size: calc(var(--font-size-max) * 1px);
+  }
 }
 
 body {
@@ -307,6 +312,8 @@ pre code {
   font-size: 1em;
   padding: 0;
 }
+
+/* Form */
 
 .button, .control {
   -webkit-appearance: none;
@@ -379,6 +386,8 @@ textarea.control[rows] {
   height: initial;
 }
 
+/* Container */
+
 .container {
   position: relative;
   width: calc(100% - 2 * var(--component-spacer));
@@ -420,6 +429,8 @@ textarea.control[rows] {
 .container.is-xl {
   max-width: 1280px !important;
 }
+
+/* Button */
 
 .button {
   justify-content: center;
@@ -547,6 +558,8 @@ textarea.control[rows] {
   width: 100%;
 }
 
+/* Box */
+
 .box {
   --shadow: 0 0.01em 0.01em rgba(0, 0, 0, 0.025), 0 0.05em 0.1em rgba(0, 0, 0, 0.05), 0 0.2em 0.375em rgba(0, 0, 0, 0.1);
   display: block;
@@ -555,6 +568,8 @@ textarea.control[rows] {
   box-shadow: var(--shadow);
   padding: var(--component-spacer);
 }
+
+/* Helpers */
 
 .block:not(:last-child) {
   margin-bottom: var(--component-spacer);
@@ -608,6 +623,8 @@ textarea.control[rows] {
   overflow: hidden;
   white-space: nowrap;
 }
+
+/* Utilities */
 
 .text-primary {
   color: var(--color-primary) !important;
