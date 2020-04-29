@@ -4,6 +4,7 @@
   --color-primary-active: hsl(240, 100%, 62%);
   --color-primary-lucent: hsla(240, 100%, 46%, 0.35);
   --color-background: var(--color-primary);
+  --font-size-max: 19;
   --font-family-base: "Inter", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --radius: 0.5em;
 }
