@@ -48,6 +48,7 @@
   --color-text: var(--color-contrast-higher);
   --color-border: var(--color-contrast-lower);
   --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary);
 }
 
 [data-theme=dark] {
@@ -61,6 +62,7 @@
   --color-text: white;
   --color-border: var(--color-contrast-low);
   --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary);
 }
 
 [data-theme] {
@@ -285,6 +287,7 @@ a {
   text-decoration: none;
 }
 a:hover {
+  color: var(--color-link-hover);
   text-decoration: underline;
 }
 
