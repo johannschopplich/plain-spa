@@ -6,14 +6,12 @@ import { terser } from 'rollup-plugin-terser'
 
 const production = !process.env.ROLLUP_WATCH
 
-export default [{
+export default {
 	input: 'js/main.js',
-	output: [
-		{
-			file: 'build/bundle.js',
-			format: 'es'
-		}
-	],
+	output: {
+    file: 'build/bundle.js',
+    format: 'es'
+  },
 	plugins: [
     bundleSize(),
     rootImport({
@@ -34,4 +32,4 @@ export default [{
     // If building for production, minify
     production && terser()
   ]
-}]
+}
