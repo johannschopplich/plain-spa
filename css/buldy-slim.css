@@ -298,6 +298,7 @@ mark {
 
 code {
   background-color: var(--color-contrast-lowest);
+  color: var(--color-contrast-higher);
   font-size: 0.875em;
   padding: var(--space-xxxs) var(--space-xs);
 }
@@ -312,6 +313,7 @@ pre {
 }
 pre code {
   background-color: transparent;
+  color: currentColor;
   font-size: 1em;
   padding: 0;
 }
