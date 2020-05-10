@@ -14,7 +14,7 @@ const Header = () => html`
     <div class="box" data-theme="light">
       <p class="title text-4">Plain SPA</p>
       <nav>
-        <ul class="flow-h">
+        <ul class="stack-h">
           <li><a href="/">Home</a></li>
           <li><a href="/todo">Todo</a></li>
           <li><a href="/blog/post-with-id">Post with ID</a></li>
