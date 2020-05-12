@@ -36,7 +36,7 @@
   --radius: 0.25em;
 }
 
-:root,
+:root:not([data-theme]),
 [data-theme=light] {
   --color-contrast-lowest: hsl(0, 0%, 95%);
   --color-contrast-lower: hsl(0, 0%, 82%);
@@ -65,7 +65,7 @@
   --color-link-hover: var(--color-link);
 }
 
-[data-theme] {
+[data-theme]:not(:root) {
   color: var(--color-text);
   background-color: var(--color-background);
 }
