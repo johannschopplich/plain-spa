@@ -8,12 +8,6 @@ export const TodoApp = () => {
   if (stored) items(JSON.parse(stored))
 
   const view = html`
-    <style>
-      .control {
-        margin-bottom: var(--space-xs);
-      }
-    </style>
-
     <div>
       <h1 class="title text-4">Todo List</h1>
       <${TodoList} items=${items} />
@@ -26,6 +20,7 @@ export const TodoApp = () => {
           class="control"
           onchange=${e => text(e.target.value)}
           value=${text}
+          style=${{ 'margin-bottom': 'var(--space-xs)' }}
         />
         <button class="button is-primary is-outlined">
           Add #${() => items().length + 1}
@@ -34,8 +29,8 @@ export const TodoApp = () => {
     </div>
   `
 
-  function handleSubmit (e) {
-    e.preventDefault()
+  function handleSubmit (evt) {
+    evt.preventDefault()
     if (!text().length) return
 
     items([...items(), { text: text(), id: Date.now() }])
@@ -47,7 +42,7 @@ export const TodoApp = () => {
 }
 
 const TodoList = ({ items }) => html`
-  <ul>
+  <ul style="${{ 'margin-left': 'var(--space-l)' }}">
     ${map(items, item => html`<li id=${item.id}>${item.text}</li>`)}
   </ul>
 `
