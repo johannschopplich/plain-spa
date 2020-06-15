@@ -7,6 +7,15 @@ export const TodoApp = () => {
   const stored = localStorage.getItem('app.todo')
   if (stored) items(JSON.parse(stored))
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+    if (!text().length) return
+
+    items([...items(), { text: text(), id: Date.now() }])
+    localStorage.setItem('app.todo', JSON.stringify(items()))
+    text('')
+  }
+
   const view = html`
     <div>
       <h1 class="title text-4">Todo List</h1>
@@ -28,15 +37,6 @@ export const TodoApp = () => {
       </form>
     </div>
   `
-
-  function handleSubmit (evt) {
-    evt.preventDefault()
-    if (!text().length) return
-
-    items([...items(), { text: text(), id: Date.now() }])
-    localStorage.setItem('app.todo', JSON.stringify(items()))
-    text('')
-  }
 
   return view
 }
