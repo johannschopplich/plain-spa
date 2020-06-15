@@ -9,9 +9,9 @@
     "test": "echo \"No test specified\""
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@rollup/plugin-alias": "^3.1.0",
-    "rollup": "^2.10.9",
+    "@babel/core": "^7.10.2",
+    "@rollup/plugin-alias": "^3.1.1",
+    "rollup": "^2.16.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-size": "^0.2.2",
     "rollup-plugin-terser": "^6.1.0"
