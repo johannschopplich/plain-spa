@@ -10,31 +10,38 @@ import {
   root,
   sample
 } from './observable/index.js';
-import { api, context } from './h/index.js';
+import { api } from './h/index.js';
 import htm from './htm/index.js';
 
-api.h = context({ subscribe, cleanup, root, sample });
-api.hs = context({ subscribe, cleanup, root, sample }, true);
+// Minified this is actually smaller than Object.assign(api, { ... })
+api.subscribe = subscribe;
+api.cleanup = cleanup;
+api.root = root;
+api.sample = sample;
+
+api.hs = (...args) => {
+  const prevIsSvg = api.s;
+  api.s = true;
+  const el = h(...args);
+  api.s = prevIsSvg;
+  return el;
+};
 
 // Makes it possible to intercept `h` calls and customize.
-export function h() {
-  return api.h.apply(api.h, arguments);
-}
+export const h = (...args) =>
+  api.h.apply(api.h, args);
 
 // Makes it possible to intercept `hs` calls and customize.
-export function hs() {
-  return api.hs.apply(api.hs, arguments);
-}
+export const hs = (...args) =>
+  api.hs.apply(api.hs, args);
 
 // `export const html = htm.bind(h)` is not tree-shakeable!
-export function html() {
-  return htm.apply(h, arguments);
-}
+export const html = (...args) =>
+  htm.apply(h, args);
 
 // `export const svg = htm.bind(hs)` is not tree-shakeable!
-export function svg() {
-  return htm.apply(hs, arguments);
-}
+export const svg = (...args) =>
+  htm.apply(hs, args);
 
-export { api, context, o, observable };
+export { api, o, observable };
 export { map } from './map/index.js';

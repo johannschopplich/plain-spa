@@ -1,7 +1,7 @@
 # <a href="https://github.com/luwes/sinuous"><img src="https://sinuous.netlify.app/images/sinuous-logo.svg?sanitize=true" height="40" alt="Sinuous" /></a>
 
 [![Version](https://img.shields.io/npm/v/sinuous.svg?color=success&style=flat-square)](https://www.npmjs.com/package/sinuous)
-![Badge size](https://img.badgesize.io/https://unpkg.com/sinuous/dist/sinuous-observable.min.js?v=1&compression=gzip&label=gzip&style=flat-square)
+![Badge size](https://img.badgesize.io/https://unpkg.com/sinuous/module/sinuous-observable.js?compression=gzip&label=gzip&style=flat-square)
 [![codecov](https://img.shields.io/codecov/c/github/luwes/sinuous.svg?style=flat-square&color=success)](https://codecov.io/gh/luwes/sinuous)
 [![Financial Contributors on Open Collective](https://opencollective.com/sinuous/all/badge.svg?label=financial+contributors&style=flat-square)](https://opencollective.com/sinuous)
 
@@ -163,6 +163,39 @@ hydrate(
 
 hydrate(dhtml`<a class="navbar-menu${isActive}" />`);
 ```
+
+## Internal API
+
+Sinuous exposes an internal API which can be overridden for fun and profit.
+For example [sinuous-context](https://github.com/theSherwood/sinuous-context) uses it to implement a React like context API.
+
+As of `0.27.4` the internal API should be used to make Sinuous work with a 3rd party reactive library like [Mobx](https://mobx.js.org). This can be done by overriding `subscribe`, `root`, `sample` and `cleanup`.
+
+### Example
+
+```js
+import { api } from 'sinuous';
+
+const oldH = api.h;
+api.h = (...args) => {
+  console.log(args);
+  return oldH(...args);
+}
+```
+
+### Methods
+
+- `h(type: string, props: object, ...children)`
+- `hs(type: string, props: object, ...children)`
+- `insert<T>(el: Node, value: T, endMark?: Node, current?: T | Frag, startNode?: Node): T | Frag;`
+- `property(el: Node, value: unknown, name: string, isAttr?: boolean, isCss?: boolean): void;`
+- `add(parent: Node, value: Value | Value[], endMark?: Node): Node | Frag;`
+- `rm(parent: Node, startNode: Node, endMark: Node): void;`
+- `subscribe<T>(observer: () => T): () => void;`
+- `root<T>(fn: () => T): T;`
+- `sample<T>(fn: () => T): T;`
+- `cleanup<T extends () => unknown>(fn: T): T;`
+
 
 ## Motivation
 
