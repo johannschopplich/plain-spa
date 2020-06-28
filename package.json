@@ -27,7 +27,7 @@
     "spa",
     "sinuous"
   ],
-  "author": "Johann Schopplich <mail@johannschopplich.com> (https://johannschopplich.com)",
+  "author": "Johann Schopplich <pkg@johannschopplich.com> (https://johannschopplich.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/johannschopplich/plain-spa/issues"
