@@ -1,6 +1,6 @@
 {
   "name": "plain-spa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Modern single-page application deployable as-is without any bundlers",
   "main": "js/main.js",
   "scripts": {
