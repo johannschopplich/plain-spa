@@ -5,24 +5,11 @@
 
 [Storeon] Router which solves the problem of routing your application, providing full control over the route.
 
-It size is 570 bytes (minified and gzipped) and uses [Size Limit] to control size.
+It size is 577 bytes (minified and gzipped) and uses [Size Limit] to control size.
 
 [Storeon]: https://github.com/storeon/storeon
 [Size Limit]: https://github.com/ai/size-limit
 
-
-## Installation
-
-```
-npm install @storeon/router
-# or
-yarn add @storeon/router
-```
-
-
-## Usage
-
-If you want to use the router you should import the `createRouter` from `@storeon/router` and add this module to `createStoreon`.
 
 ```js
 import { createStoreon } from 'storeon'
@@ -52,6 +39,19 @@ function setData (data) {
     .querySelector('.data')
     .innerText = JSON.stringify(data)
 }
+```
+
+<a href="https://evrone.com/?utm_source=storeon-router">
+    <img src="https://solovev.one/static/evrone-sponsored-300.png" alt="Sponsored by Evrone" width="210">
+</a>
+
+
+## Installation
+
+```
+npm install @storeon/router
+# or
+yarn add @storeon/router
 ```
 
 
@@ -87,18 +87,3 @@ Function `createRouter` could have options:
 ### Ignore link
 
 Add `data-ignore-router` attribute to the link so that the router ignores it.
-
-
-## Sponsor
-
-<p>
-  <a href="https://evrone.com/?utm_source=storeon-router">
-    <img src="https://solovev.one/static/evrone-sponsored-300.png"
-      alt="Sponsored by Evrone" width="210">
-  </a>
-</p>
-
-
-## LICENSE
-
-MIT
