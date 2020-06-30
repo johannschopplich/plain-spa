@@ -6,10 +6,10 @@
 A tiny event-based Redux-like state manager for **React**, **Preact**,
 **[Angular]**, **[Vue]** and **[Svelte]**.
 
-* **Small.** 167 bytes (minified and gzipped). No dependencies.
+* **Small.** 167 bytes (minified and gzipped). No dependencies.
   It uses [Size Limit] to control size.
 * **Fast.** It tracks what parts of state were changed and re-renders
-  only components based on the changes.
+  only components based on the changes.
 * **Hooks.** The same Redux reducers.
 * **Modular.** API created to move business logic away from React components.
 
@@ -68,7 +68,7 @@ render(
   tracks links and Back button click and allows you to open
   pages without reloading the whole page.
 * [`@storeon/localstorage`](https://github.com/storeon/localstorage)
-  saves and restores state to `localStorage`.
+  saves and restores state to `localStorage` or `sessionStorage`.
 * [`@storeon/crosstab`](https://github.com/storeon/crosstab)
   synchronizes events between browser tabs.
 * [`@storeon/undo`](https://github.com/storeon/undo)
@@ -80,10 +80,9 @@ Third-party tools:
 
 * [`majo44/storeon-async-router`](https://github.com/majo44/storeon-async-router)
   is router with data prefetch, modules lazy load, navigation cancellation,
-  and routes modification on the fly.
-* [`koddr/storeon-sessionstorage`](https://github.com/koddr/storeon-sessionstorage)
-  saves and restores state to `sessionStorage` (based on [`@storeon/localstorage`](https://github.com/storeon/localstorage)).
-
+  and routes modification on the fly.
+* [`mariosant/storeon-streams`](https://github.com/mariosant/storeon-streams)
+  is side effects management library.
 
 ## Install
 
@@ -172,7 +171,7 @@ unbind()
 You can dispatch any other events. Just do not start event names with `@`.
 
 If the event listener returns an object, this object will update the state.
-You do not need to return the whole state, return an object
+You do not need to return the whole state, return an object
 with changed keys.
 
 ```js
@@ -339,6 +338,46 @@ store.dispatch('dec')        // Unknown event
 
 In order to work properly for imports, it is considering adding
 `allowSyntheticDefaultImports: true` to `tsconfig.json`.
+
+## Server-Side Rendering
+
+In order to preload data for server-side rendering, Storeon provide
+`customContext` function to create your own `useStoreon` hooks that it will
+depends on your custom context.
+
+```js
+// store.jsx
+import { createContext, render } from 'react' // or preact
+
+import { createStoreon, StoreonModule } from 'storeon'
+import { customContext } from 'storeon/react' // or storeon/preact
+
+const store = …
+
+const CustomContext = createContext(store)
+
+// useStoreon will automatically recognize your storeon store and event types
+export const useStoreon = customContext(CustomContext)
+
+render(
+  <CustomContext.Provider value={store}>
+    <Counter />
+  </CustomContext.Provider>,
+  document.body
+)
+```
+
+```js
+// children.jsx
+import { useStoreon } from '../store'
+
+const Counter = () => {
+  const { dispatch, count } = useStoreon('count')
+
+  dispatch('set', 100)
+  …
+}
+```
 
 
 ## Testing

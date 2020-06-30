@@ -8,7 +8,7 @@ export default class Translator {
       filesLocation: '/i18n'
     }
 
-    this._options = {...defaultConfig, ...options}
+    this._options = { ...defaultConfig, ...options }
     this._lang = this.getLanguage()
     this._elements = document.querySelectorAll('[data-i18n]')
   }
