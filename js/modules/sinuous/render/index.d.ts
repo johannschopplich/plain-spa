@@ -1,60 +1,57 @@
 import { JSXInternal } from '../jsx';
-import { ElementChildren, FunctionComponent } from '../shared';
+import { FunctionComponent, ElementChildren } from '../shared';
 
-interface VNode<P = {}> {
-  type: string
-  _props: object
-  _children: VNode[]
-  _isSvg: boolean
+interface TemplateResult<P = {}> {
+  (): Node
 }
 
-export function hydrate(delta: VNode, root?: Node): Node;
+export function render(delta: TemplateResult, root?: Node): Node;
 
-export const dhtml: (strings: TemplateStringsArray, ...values: any[]) => VNode | VNode[];
-export const dsvg: (strings: TemplateStringsArray, ...values: any[]) => VNode | VNode[];
+export const rhtml: (strings: TemplateStringsArray, ...values: any[]) => TemplateResult;
+export const rsvg: (strings: TemplateStringsArray, ...values: any[]) => TemplateResult;
 
-export function d(
+export function r(
   type: string,
   props:
     | JSXInternal.HTMLAttributes &
       Record<string, any>
     | null,
   ...children: ElementChildren[]
-): VNode | VNode[];
-export function d(
+): TemplateResult;
+export function r(
   type: FunctionComponent,
   props:
     | JSXInternal.HTMLAttributes &
       Record<string, any>
     | null,
   ...children: ElementChildren[]
-): VNode | VNode[];
-export function d(
+): TemplateResult;
+export function r(
   children: ElementChildren[]
-): VNode | VNode[];
-export namespace d {
+): TemplateResult;
+export namespace r {
   export import JSX = JSXInternal;
 }
 
-export function ds(
+export function rs(
   type: string,
   props:
     | JSXInternal.SVGAttributes &
       Record<string, any>
     | null,
   ...children: ElementChildren[]
-): VNode | VNode[];
-export function ds(
+): TemplateResult;
+export function rs(
   type: FunctionComponent,
   props:
     | JSXInternal.SVGAttributes &
       Record<string, any>
     | null,
   ...children: ElementChildren[]
-): VNode | VNode[];
-export function ds(
+): TemplateResult;
+export function rs(
   children: ElementChildren[]
-): VNode | VNode[];
-export namespace ds {
+): TemplateResult;
+export namespace rs {
   export import JSX = JSXInternal;
 }

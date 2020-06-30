@@ -1,4 +1,4 @@
-import { Observable } from '../../observable/src';
+import { Observable } from '../observable';
 
 export function map<T>(
   items: ((...args: unknown[]) => T[]) | Observable<T[]>,

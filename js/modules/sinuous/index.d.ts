@@ -1,10 +1,10 @@
 export = sinuous;
 export as namespace sinuous;
 
-import { JSXInternal } from '../jsx-internal';
-import { HyperscriptApi } from '../h/src';
-import * as _shared from '../shared'
-import * as _o from '../observable/src';
+import { JSXInternal } from './jsx';
+import { HyperscriptApi } from './h';
+import * as _shared from './shared'
+import * as _o from './observable';
 
 // Adapted from Preact's index.d.ts
 // Namespace prevents conflict with React typings
